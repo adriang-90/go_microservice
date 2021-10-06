@@ -4,14 +4,14 @@ package stats;
 
 option go_package = "gitub.com/github.com/go_microservice/rpc/stats";
 
+service StatsService {
+    rpc Push(PushRequest) return (PushResponse);
+}
+
 message PushRequest {
     string property = 1;
     uint32 section = 2;
     uint id = 3;
-}
-
-service StatsService {
-    rpc Push(PushRequest) return (PushResponse);
 }
 
 message PushResponse {}
